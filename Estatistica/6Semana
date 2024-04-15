@@ -1,0 +1,20 @@
+##########
+# Aluno Diego O. Antunes
+# Materia de Estatistica
+
+# Carregar os dados
+dados <- read.csv("D:\\gitT\\Pos_IA_UTFPR\\Estatistica\\Fabrica.csv")
+
+# Probabilidade de um componente ser defeituoso
+prob_defeituoso <- sum(dados$Defeito == "Sim") / nrow(dados)
+
+# Probabilidade de um componente ser da linha de produção 1
+prob_linha1 <- sum(dados$Componente == 1) / nrow(dados)
+
+# Probabilidade de um componente ser da linha 2 dado que não é defeituoso
+prob_linha2_nao_defeituoso <- sum(dados$Componente == 2 & dados$Defeito == "Nao") / sum(dados$Defeito == "Nao")
+
+# Exibir os resultados
+cat("Probabilidade de defeito:", prob_defeituoso, "\n")
+cat("Probabilidade da linha 1:", prob_linha1, "\n")
+cat("Probabilidade da linha 2 não defeituoso:", prob_linha2_nao_defeituoso, "\n")
